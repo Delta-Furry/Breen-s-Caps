@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo - BREEN’S CAPS</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Catálogo</h1>
+    <a href="carrito.html" class="carrito-link">Ir al carrito</a>
+  </header>
+
+  <main>
+    <div class="producto">
+      <h3>Gorra Negra Clásica</h3>
+      <p>$250</p>
+      <button onclick="agregarAlCarrito('Gorra Negra Clásica', 250)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <h3>Gorra Blanca Edición</h3>
+      <p>$300</p>
+      <button onclick="agregarAlCarrito('Gorra Blanca Edición', 300)">Agregar al carrito</button>
+    </div>
+  </main>
+
+  <script>
+    function agregarAlCarrito(nombre, precio) {
+      var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre: nombre, precio: precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert('Producto agregado al carrito');
+    }
+  </script>
+</body>
+</html>
