@@ -2,34 +2,110 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catálogo - BREEN’S CAPS</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <header>
-    <h1>Catálogo</h1>
-    <a href="carrito.html" class="carrito-link">Ir al carrito</a>
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo de BREEN’S CAPS" class="logo">
+      <h1>BREEN’S CAPS</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#mision">Misión</a></li>
+        <li><a href="index.html#vision">Visión</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <div class="producto">
-      <h3>Gorra Negra Clásica</h3>
-      <p>$250</p>
-      <button onclick="agregarAlCarrito('Gorra Negra Clásica', 250)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <h3>Gorra Blanca Edición</h3>
-      <p>$300</p>
-      <button onclick="agregarAlCarrito('Gorra Blanca Edición', 300)">Agregar al carrito</button>
-    </div>
+    <section class="catalogo">
+      <h2>Catálogo de Gorras</h2>
+      <div class="productos">
+        <!-- Producto 1: Gorra Plana -->
+        <div class="producto">
+          <img src="gorra_plana.jpg" alt="Gorra Plana">
+          <h3>Gorra Plana</h3>
+          <p>Precio: $100 MXN</p>
+          <label for="color1">Color:</label>
+          <select id="color1">
+            <option value="Negro">Negro</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+          <button onclick="agregarAlCarrito('Gorra Plana', 100, document.getElementById('color1').value)">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 2: Gorra Curva -->
+        <div class="producto">
+          <img src="gorra_curva.jpg" alt="Gorra Curva">
+          <h3>Gorra Curva</h3>
+          <p>Precio: $100 MXN</p>
+          <label for="color2">Color:</label>
+          <select id="color2">
+            <option value="Negro">Negro</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+          <button onclick="agregarAlCarrito('Gorra Curva', 100, document.getElementById('color2').value)">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 3: Sombrero para Sol -->
+        <div class="producto">
+          <img src="sombrero_sol.jpg" alt="Sombrero para Sol">
+          <h3>Sombrero para Sol</h3>
+          <p>Precio: $100 MXN</p>
+          <label for="color3">Color:</label>
+          <select id="color3">
+            <option value="Negro">Negro</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+          <button onclick="agregarAlCarrito('Sombrero para Sol', 100, document.getElementById('color3').value)">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 4: Gorra para Niño -->
+        <div class="producto">
+          <img src="gorra_nino.jpg" alt="Gorra para Niño">
+          <h3>Gorra para Niño</h3>
+          <p>Precio: $70 MXN</p>
+          <label for="color4">Color:</label>
+          <select id="color4">
+            <option value="Negro">Negro</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+          <button onclick="agregarAlCarrito('Gorra para Niño', 70, document.getElementById('color4').value)">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 5: Gorra para Bebé -->
+        <div class="producto">
+          <img src="gorra_bebe.jpg" alt="Gorra para Bebé">
+          <h3>Gorra para Bebé</h3>
+          <p>Precio: $60 MXN</p>
+          <label for="color5">Color:</label>
+          <select id="color5">
+            <option value="Negro">Negro</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+          <button onclick="agregarAlCarrito('Gorra para Bebé', 60, document.getElementById('color5').value)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer>
+    <p>&copy; 2025 BREEN’S CAPS. Todos los derechos reservados.</p>
+  </footer>
+
   <script>
-    function agregarAlCarrito(nombre, precio) {
-      var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-      carrito.push({ nombre: nombre, precio: precio });
+    function agregarAlCarrito(nombre, precio, color) {
+      const producto = { nombre, precio, color };
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push(producto);
       localStorage.setItem('carrito', JSON.stringify(carrito));
-      alert('Producto agregado al carrito');
+      alert(`${nombre} en color ${color} agregado al carrito.`);
     }
   </script>
 </body>
