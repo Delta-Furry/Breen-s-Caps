@@ -2,40 +2,55 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BREEN’S CAPS</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo de BREEN’S CAPS" class="logo">
-    <h1>BREEN’S CAPS</h1>
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo de BREEN’S CAPS" class="logo">
+      <h1>BREEN’S CAPS</h1>
+    </div>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="#mision">Misión</a>
-      <a href="#vision">Visión</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="carrito.html">Carrito</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#mision">Misión</a></li>
+        <li><a href="#vision">Visión</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <section id="mision">
-      <h2>Misión</h2>
-      <p>Ofrecer gorras únicas con estilo y calidad superior para destacar tu personalidad.</p>
+    <section class="hero">
+      <img src="portada.jpg" alt="Imagen principal de gorras" class="hero-image">
     </section>
 
-    <section id="vision">
-      <h2>Visión</h2>
-      <p>Ser la marca líder en diseño de gorras en Latinoamérica, innovando constantemente.</p>
+    <section id="mision" class="info-section">
+      <div class="text-content">
+        <h2>Misión</h2>
+        <p>Ofrecer gorras únicas con estilo y calidad superior para destacar tu personalidad.</p>
+      </div>
+      <div class="image-content">
+        <img src="mision.jpg" alt="Imagen de la misión" class="section-image">
+      </div>
     </section>
 
-    <section class="portada">
-      <img src="portada.jpg" alt="Imagen de Gorras" class="portada-img">
+    <section id="vision" class="info-section">
+      <div class="image-content">
+        <img src="vision.jpg" alt="Imagen de la visión" class="section-image">
+      </div>
+      <div class="text-content">
+        <h2>Visión</h2>
+        <p>Ser la marca líder en diseño de gorras en Latinoamérica, innovando constantemente.</p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 BREEN’S CAPS</p>
+    <p>&copy; 2025 BREEN’S CAPS. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
