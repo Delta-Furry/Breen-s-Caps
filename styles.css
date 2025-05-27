@@ -95,7 +95,9 @@ nav .nav-links a:hover {
 
 /* Catálogo de productos */
 .catalogo {
-  padding: 40px 20px;
+  padding: 100px 20px 40px 20px;
+  background-color: #000;
+  color: #fff;
   text-align: center;
 }
 
@@ -108,16 +110,15 @@ nav .nav-links a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
 }
 
 .producto {
   background-color: #111;
   border: 1px solid #fff;
-  border-radius: 5px;
   padding: 20px;
   width: 250px;
-  text-align: center;
+  border-radius: 10px;
   transition: transform 0.3s;
 }
 
@@ -128,7 +129,8 @@ nav .nav-links a:hover {
 .producto img {
   width: 100%;
   height: auto;
-  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .producto h3 {
@@ -136,12 +138,14 @@ nav .nav-links a:hover {
   font-size: 1.2em;
 }
 
-.producto select, .producto input[type="number"] {
-  margin: 10px 0;
+.producto p {
+  margin-bottom: 10px;
+}
+
+.producto select {
+  margin-bottom: 10px;
   padding: 5px;
   width: 100%;
-  border: none;
-  border-radius: 3px;
 }
 
 .producto button {
@@ -149,6 +153,7 @@ nav .nav-links a:hover {
   color: #000;
   border: none;
   padding: 10px;
+  width: 100%;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -215,4 +220,34 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .info-section {
+    flex-direction: column;
+  }
+
+  .text-content, .image-content {
+    flex: 1 1 100%;
+  }
+
+  .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 90%;
+  }
+
+  nav .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .nav-links li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
 }
