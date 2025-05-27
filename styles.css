@@ -93,6 +93,120 @@ nav .nav-links a:hover {
   border: 2px solid #fff;
 }
 
+/* Catálogo de productos */
+.catalogo {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.catalogo h2 {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.producto {
+  background-color: #111;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.producto h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.producto select, .producto input[type="number"] {
+  margin: 10px 0;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.producto button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.producto button:hover {
+  background-color: #ccc;
+}
+
+/* Sección del carrito */
+.carrito {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.carrito h2 {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.tabla-carrito {
+  overflow-x: auto;
+}
+
+.tabla-carrito table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabla-carrito th, .tabla-carrito td {
+  border: 1px solid #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla-carrito th {
+  background-color: #222;
+}
+
+.resumen-carrito {
+  font-size: 1.2em;
+}
+
+.resumen-carrito button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.resumen-carrito button:hover {
+  background-color: #ccc;
+}
+
 /* Pie de página */
 footer {
   background-color: #111;
