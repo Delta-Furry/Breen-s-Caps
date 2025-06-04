@@ -4,8 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BREEN’S CAPS</title>
-  <link rel="stylesheet" href="estilos.css">}
+  <link rel="stylesheet" href="estilos.css">
   <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    /* Estilos directamente en el archivo para que funcione sin CSS externo */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      width: 100%;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .text-content {
+      flex: 1 1 300px;
+    }
+
+    .image-content {
+      flex: 1 1 300px;
+    }
+
+    .section-image {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #quienes-somos {
+      background-color: #f5f5f5;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    #quienes-somos h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #quienes-somos p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -47,9 +158,13 @@
         <h2>Visión</h2>
         <p>Ser la marca líder en diseño de gorras en Latinoamérica, innovando constantemente.</p>
       </div>
+    </section>
 
-
-
+    <section id="quienes-somos">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+        BREEN’S CAPS nace de la pasión por la moda urbana y el estilo único. Nos especializamos en crear gorras que expresan tu personalidad, ya sean planas (en blanco y negro para un look clásico y elegante) o curvas con variedad de colores vibrantes para quienes aman destacar. Somos una marca joven, auténtica y comprometida con la calidad y el diseño original.
+      </p>
     </section>
   </main>
 
