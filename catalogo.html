@@ -15,48 +15,34 @@
     header {
       background-color: #000;
       color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 20px 0;
+      text-align: center;
     }
 
     .logo-container {
       display: flex;
+      flex-direction: column;
       align-items: center;
     }
 
     .logo {
-      width: 50px;
-      margin-right: 10px;
-    }
-
-    .logo-container h1 {
-      font-size: 20px;
-      margin: 0;
-    }
-
-    nav {
-      display: flex;
+      width: 60px;
+      margin-bottom: 10px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 15px;
+      justify-content: center;
+      gap: 30px;
       padding: 0;
-      margin: 0;
+      margin: 15px 0 0;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
     }
 
     main {
@@ -128,7 +114,7 @@
       <h1>BREEN’S CAPS</h1>
     </div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="index.html#mision">Misión</a></li>
         <li><a href="index.html#vision">Visión</a></li>
@@ -142,8 +128,8 @@
     <section class="catalogo">
       <h2>Catálogo de Gorras</h2>
       <div class="productos">
-        <!-- Catálogo tal cual lo enviaste (sin cambios) -->
-        <!-- Producto 1: GORRA PLANA -->
+
+        <!-- Producto 1 -->
         <div class="producto">
           <img id="imagen-gorra-plana" src="gorra_curva_negro.jpg" alt="Gorra Plana" />
           <h3>Gorra Plana</h3>
@@ -156,7 +142,7 @@
           <button onclick="agregarAlCarrito('Gorra Plana', 100, document.getElementById('color-gorra-plana').value)">Agregar al carrito</button>
         </div>
 
-        <!-- Producto 2: GORRA CURVA -->
+        <!-- Producto 2 -->
         <div class="producto">
           <img id="imagen-gorra-curva" src="gorra_plana_rojo.jpg" alt="Gorra Curva" />
           <h3>Gorra Curva</h3>
@@ -208,6 +194,7 @@
           </select>
           <button onclick="agregarAlCarrito('Gorra para Bebé', 60, document.getElementById('color-gorra-bebe').value)">Agregar al carrito</button>
         </div>
+
       </div>
     </section>
   </main>
