@@ -4,8 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catálogo - BREEN’S CAPS</title>
-  <link rel="stylesheet" href="estilos.css" />
   <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .catalogo h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .producto {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .producto img {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 5px;
+    }
+
+    .producto h3 {
+      margin: 10px 0 5px;
+    }
+
+    .producto p, .producto select, .producto button {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #000;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -28,7 +129,25 @@
     <section class="catalogo">
       <h2>Catálogo de Gorras</h2>
       <div class="productos">
-        <!-- Producto 1: Gorra Plana -->
+        
+        <!-- Producto 1: Gorra Curva (varios colores) -->
+        <div class="producto">
+          <img id="imagen-gorra-curva" src="gorra_curva_rojo.jpg" alt="Gorra Curva" />
+          <h3>Gorra Curva</h3>
+          <p>Precio: $100 MXN</p>
+          <label for="color-gorra-curva">Color:</label>
+          <select id="color-gorra-curva" onchange="cambiarImagenGorraCurva()">
+            <option value="rojo">Rojo</option>
+            <option value="azul">Azul</option>
+            <option value="verde">Verde</option>
+            <option value="gris">Gris</option>
+            <option value="negro">Negro</option>
+            <option value="blanco">Blanco</option>
+          </select>
+          <button onclick="agregarAlCarrito('Gorra Curva', 100, document.getElementById('color-gorra-curva').value)">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 2: Gorra Plana (solo blanco y negro) -->
         <div class="producto">
           <img id="imagen-gorra-plana" src="gorra_plana_negro.jpg" alt="Gorra Plana" />
           <h3>Gorra Plana</h3>
@@ -37,25 +156,8 @@
           <select id="color-gorra-plana" onchange="cambiarImagenGorraPlana()">
             <option value="negro">Negro</option>
             <option value="blanco">Blanco</option>
-            <option value="rojo">Rojo</option>
-            <option value="azul">Azul</option>
-            <option value="verde">Verde</option>
-            <option value="gris">Gris</option>
           </select>
           <button onclick="agregarAlCarrito('Gorra Plana', 100, document.getElementById('color-gorra-plana').value)">Agregar al carrito</button>
-        </div>
-
-        <!-- Producto 2: Gorra Curva -->
-        <div class="producto">
-          <img src="gorra_curva.jpg" alt="Gorra Curva" />
-          <h3>Gorra Curva</h3>
-          <p>Precio: $100 MXN</p>
-          <label for="color-gorra-curva">Color:</label>
-          <select id="color-gorra-curva">
-            <option value="Negro">Negro</option>
-            <option value="Blanco">Blanco</option>
-          </select>
-          <button onclick="agregarAlCarrito('Gorra Curva', 100, document.getElementById('color-gorra-curva').value)">Agregar al carrito</button>
         </div>
 
         <!-- Producto 3: Sombrero para Sol -->
@@ -96,6 +198,7 @@
           </select>
           <button onclick="agregarAlCarrito('Gorra para Bebé', 60, document.getElementById('color-gorra-bebe').value)">Agregar al carrito</button>
         </div>
+
       </div>
     </section>
   </main>
@@ -107,8 +210,14 @@
   <script>
     function cambiarImagenGorraPlana() {
       const colorSeleccionado = document.getElementById('color-gorra-plana').value;
-      const imagenGorra = document.getElementById('imagen-gorra-plana');
-      imagenGorra.src = `gorra_plana_${colorSeleccionado}.jpg`;
+      const imagen = document.getElementById('imagen-gorra-plana');
+      imagen.src = `gorra_plana_${colorSeleccionado}.jpg`;
+    }
+
+    function cambiarImagenGorraCurva() {
+      const colorSeleccionado = document.getElementById('color-gorra-curva').value;
+      const imagen = document.getElementById('imagen-gorra-curva');
+      imagen.src = `gorra_curva_${colorSeleccionado}.jpg`;
     }
 
     function agregarAlCarrito(nombre, precio, color) {
