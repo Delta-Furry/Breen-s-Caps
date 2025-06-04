@@ -6,6 +6,121 @@
   <title>Carrito de Compras - BREEN’S CAPS</title>
   <link rel="stylesheet" href="estilos.css" />
   <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .carrito {
+      padding: 20px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #000;
+      padding: 10px;
+    }
+
+    .resumen-carrito {
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    button {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="text"], input[type="number"] {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .formulario-envio {
+      padding: 20px;
+      background: #f1f1f1;
+      margin: 40px auto;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+
+    .formulario-envio h3 {
+      text-align: center;
+    }
+
+    .formulario-envio label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .info-contacto, .reloj-entrega {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .mapa {
+      margin: 30px auto;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -40,7 +155,7 @@
             </tr>
           </thead>
           <tbody id="carrito-body">
-            <!-- Los productos se agregarán aquí dinámicamente -->
+            <!-- Productos se agregan aquí -->
           </tbody>
         </table>
       </div>
@@ -49,6 +164,37 @@
         <button id="finalizar-compra">Finalizar Compra</button>
       </div>
     </section>
+
+    <section class="formulario-envio">
+      <h3>Datos de Entrega</h3>
+      <label>Nombre completo:</label>
+      <input type="text" placeholder="Nombre y Apellidos">
+      <label>Dirección:</label>
+      <input type="text" placeholder="Calle, Número, Colonia">
+      <label>Código Postal:</label>
+      <input type="text" placeholder="00000">
+      <label>Estado:</label>
+      <input type="text" placeholder="Estado">
+      <label>Ciudad:</label>
+      <input type="text" placeholder="Ciudad">
+      <label>Teléfono:</label>
+      <input type="text" placeholder="Teléfono de contacto">
+    </section>
+
+    <div class="reloj-entrega">
+      <h3>Tiempo estimado de entrega</h3>
+      <p id="cronometro">2 días 00:00:00</p>
+    </div>
+
+    <div class="mapa">
+      <!-- Inserta aquí tu iframe de Google Maps -->
+      <!-- Ejemplo: <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+    </div>
+
+    <div class="info-contacto">
+      <p><strong>Dirección:</strong> Calle Ficticia #123, Ciudad, Estado, CP 00000</p>
+      <p><strong>Correo:</strong> contacto@breenscaps.com</p>
+    </div>
   </main>
 
   <footer>
@@ -56,7 +202,6 @@
   </footer>
 
   <script>
-    // Función para cargar el carrito desde localStorage
     function cargarCarrito() {
       const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
       const tbody = document.getElementById('carrito-body');
@@ -115,13 +260,30 @@
       document.getElementById('total-carrito').textContent = total;
     }
 
+    function iniciarCronometro() {
+      let tiempo = 2 * 24 * 60 * 60; // 2 días en segundos
+      const cronometro = document.getElementById("cronometro");
+
+      const intervalo = setInterval(() => {
+        const dias = Math.floor(tiempo / (24 * 60 * 60));
+        const horas = Math.floor((tiempo % (24 * 60 * 60)) / 3600);
+        const minutos = Math.floor((tiempo % 3600) / 60);
+        const segundos = tiempo % 60;
+
+        cronometro.textContent = `${dias} días ${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+
+        tiempo--;
+        if (tiempo < 0) clearInterval(intervalo);
+      }, 1000);
+    }
+
     document.getElementById('finalizar-compra').addEventListener('click', () => {
-      alert('¡Gracias por tu compra!');
+      alert('¡Gracias por tu compra! Tu pedido llegará en un máximo de 2 días.');
       localStorage.removeItem('carrito');
       cargarCarrito();
+      iniciarCronometro();
     });
 
-    // Cargar el carrito al cargar la página
     document.addEventListener('DOMContentLoaded', cargarCarrito);
   </script>
 </body>
