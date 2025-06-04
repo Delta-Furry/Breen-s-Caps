@@ -17,8 +17,8 @@
       color: #fff;
       padding: 10px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
 
@@ -30,6 +30,15 @@
     .logo {
       width: 50px;
       margin-right: 10px;
+    }
+
+    .logo-container h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
     }
 
     nav ul {
@@ -44,6 +53,10 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     main {
@@ -115,7 +128,7 @@
       <h1>BREEN’S CAPS</h1>
     </div>
     <nav>
-      <ul class="nav-links">
+      <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="index.html#mision">Misión</a></li>
         <li><a href="index.html#vision">Visión</a></li>
@@ -129,8 +142,8 @@
     <section class="catalogo">
       <h2>Catálogo de Gorras</h2>
       <div class="productos">
-
-        <!-- Producto 1: GORRA PLANA (blanco y negro) - usa imágenes nombradas como gorra_curva -->
+        <!-- Catálogo tal cual lo enviaste (sin cambios) -->
+        <!-- Producto 1: GORRA PLANA -->
         <div class="producto">
           <img id="imagen-gorra-plana" src="gorra_curva_negro.jpg" alt="Gorra Plana" />
           <h3>Gorra Plana</h3>
@@ -143,7 +156,7 @@
           <button onclick="agregarAlCarrito('Gorra Plana', 100, document.getElementById('color-gorra-plana').value)">Agregar al carrito</button>
         </div>
 
-        <!-- Producto 2: GORRA CURVA (varios colores) - usa imágenes nombradas como gorra_plana -->
+        <!-- Producto 2: GORRA CURVA -->
         <div class="producto">
           <img id="imagen-gorra-curva" src="gorra_plana_rojo.jpg" alt="Gorra Curva" />
           <h3>Gorra Curva</h3>
@@ -160,7 +173,7 @@
           <button onclick="agregarAlCarrito('Gorra Curva', 100, document.getElementById('color-gorra-curva').value)">Agregar al carrito</button>
         </div>
 
-        <!-- Producto 3: Sombrero para Sol -->
+        <!-- Producto 3 -->
         <div class="producto">
           <img src="sombrero_sol.jpg" alt="Sombrero para Sol" />
           <h3>Sombrero para Sol</h3>
@@ -172,7 +185,7 @@
           <button onclick="agregarAlCarrito('Sombrero para Sol', 100, document.getElementById('color-sombrero-sol').value)">Agregar al carrito</button>
         </div>
 
-        <!-- Producto 4: Gorra para Niño -->
+        <!-- Producto 4 -->
         <div class="producto">
           <img src="gorra_nino.jpg" alt="Gorra para Niño" />
           <h3>Gorra para Niño</h3>
@@ -184,7 +197,7 @@
           <button onclick="agregarAlCarrito('Gorra para Niño', 70, document.getElementById('color-gorra-nino').value)">Agregar al carrito</button>
         </div>
 
-        <!-- Producto 5: Gorra para Bebé -->
+        <!-- Producto 5 -->
         <div class="producto">
           <img src="gorra_bebe.jpg" alt="Gorra para Bebé" />
           <h3>Gorra para Bebé</h3>
@@ -195,7 +208,6 @@
           </select>
           <button onclick="agregarAlCarrito('Gorra para Bebé', 60, document.getElementById('color-gorra-bebe').value)">Agregar al carrito</button>
         </div>
-
       </div>
     </section>
   </main>
